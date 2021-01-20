@@ -13,11 +13,9 @@ function IndexPage(props) {
           return (
             <li key={blog.id}>
               <Link href={`/blog/${blog.slug}`}>
-                <div>
                   <a>{blog.title}</a>
-                  <p>{blog.date}</p>
-                </div>
               </Link>
+              <p>{blog.date}</p>
             </li>
           );
         })}
@@ -48,6 +46,7 @@ export async function getStaticProps() {
       })
   });
 
+  // Parse blog markdown file into an object that contains content and front-matter data
   const blogs = blogFiles
     .filter((fn) => fn.endsWith(".md"))
     .map((fn) => {
