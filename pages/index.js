@@ -30,7 +30,7 @@ export async function getStaticProps() {
   const matter = require("gray-matter");
   const { v4: uuid } = require("uuid");
 
-  // Retrieves all blog files and orders them ascending by date
+  // Retrieves all blog files and orders them ascending by date modified
   var blogFiles = fs.readdirSync(`${process.cwd()}/contents`, "utf-8", function (err, files) {
     files = files.map(function (fileName) {
       return {

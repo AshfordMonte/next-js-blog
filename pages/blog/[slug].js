@@ -2,9 +2,12 @@ import React from "react";
 
 function BlogPostPage(props) {
   return (
-    <div>
+    <div className="lg:container lg:mx-auto ">
       <h1>{props.blog.title}</h1>
-      <section dangerouslySetInnerHTML={{ __html: props.blog.content }}></section>
+      <div className="md:container md:mx-auto ">
+        <section dangerouslySetInnerHTML={{ __html: props.blog.content }}></section>
+      </div>
+
     </div>
   );
 }
