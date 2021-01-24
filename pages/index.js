@@ -1,25 +1,29 @@
 import React from "react";
 import Link from "next/link";
+import Header from "../components/Header";
 
 // This will be the landing page where the blogs will be shown
 
 function IndexPage(props) {
   return (
-    <div>
-      <h1>Blog list</h1>
-      <ul>
-        {/* List out the retrieved blogs */}
-        {props.blogs.map((blog) => {
-          return (
-            <li key={blog.id}>
-              <Link href={`/blog/${blog.slug}`}>
+    <div classname="">
+      <Header />
+      <div classname="">
+        <h1>Blog list</h1>
+        <ul>
+          {/* List out the retrieved blogs */}
+          {props.blogs.map((blog) => {
+            return (
+              <li key={blog.id}>
+                <Link href={`/blog/${blog.slug}`}>
                   <a>{blog.title}</a>
-              </Link>
-              <p>{blog.date}</p>
-            </li>
-          );
-        })}
-      </ul>
+                </Link>
+                <p>{blog.date}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }
